@@ -8,13 +8,14 @@ package poo.actividad1;
 public class Actividad1 {
 
         public static void main(String[] args) {
-        // Crear un objeto Smartphone
+        // Crear dop objetos Smartphone
         Smartphone miTelefono = new Smartphone("Snapdragon 8 Gen 1", 8, 6.5, "Negro", "123456789012345", "Android", 4500);
-
-        // Observar el estado inicial
+        Smartphone telefono2 = new Smartphone("Helio G99 Ultra", 12, 5.7, "Azul zafiro", "987654321", "Windows Phone", 6000);
+        // Observar el estado inicial del primer objeto
         System.out.println("\n--- Estado Inicial ---");
         System.out.println(miTelefono.ObtenerInfo());
 
+        //ahora probare todos los metodos
         // Intentar llamar (está apagado)
         System.out.println("\n--- Intentando llamar (apagado) ---");
         miTelefono.Llamar();
@@ -38,8 +39,10 @@ public class Actividad1 {
          System.out.println("Nivel de batería después de tomar foto: " + miTelefono.nivelBateriaPorcentaje + "%");
 
 
-        // Verificar si necesita carga (usando el método adicional)
-        int umbral = 20;
+        // Verificar si necesita carga 
+        //definimos esta variable para marcar el umbral
+        int umbral = 15;
+        
         System.out.println("\n--- Verificando si necesita carga (umbral " + umbral + "%) ---");
         if (miTelefono.necesitaCarga(umbral)) {
             System.out.println("El smartphone necesita ser cargado.");
@@ -85,5 +88,8 @@ public class Actividad1 {
         System.out.println("\n--- Estado Después de Apagar ---");
         System.out.println(miTelefono.ObtenerInfo());
 
+        
+        System.out.println(telefono2.ObtenerInfo());
+        
     }
 }
